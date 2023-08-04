@@ -1,0 +1,14 @@
+name: Coveralls
+
+on:
+  pull_request:
+  push:
+    branches:
+      - '**'
+    tags-ignore:
+      - 'v*'
+
+jobs:
+  coveralls:
+    name: Coveralls GitHub Action
+    uses: coverallsapp/github-action@v2
