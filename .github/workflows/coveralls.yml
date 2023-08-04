@@ -1,14 +1,13 @@
-name: Coveralls
+on: ["push", "pull_request"]
 
-on:
-  pull_request:
-  push:
-    branches:
-      - '**'
-    tags-ignore:
-      - 'v*'
+name: Test Coveralls
 
 jobs:
-  coveralls:
-    name: Coveralls GitHub Action
-    uses: coverallsapp/github-action@v2
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Coveralls
+      uses: coverallsapp/github-action@v2
